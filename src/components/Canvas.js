@@ -1,25 +1,28 @@
 import { useState } from "react";
+import { useSketchData } from "./contexts/SketchDataContext";
 import Square from "./Square";
-import ResolutionSlider from "./ResolutionSlider";
 
 const Canvas = () => {
-  const [side, setSide] = useState(32);
   const [isMouseDown, setIsMouseDown] = useState(false);
+  const { side, canvasGridSquares } = useSketchData();
 
-  const squares = Array.from(Array(side ** 2).keys());
+  const canvasGridSize = {
+    gridTemplateRows: `repeat(${side}, 1fr)`,
+    gridTemplateColumns: `repeat(${side}, 1fr)`,
+  };
 
   return (
     <div className="canvas-container">
       <div
         className="canvas"
+        style={canvasGridSize}
         onMouseDown={() => setIsMouseDown(true)}
         onMouseUp={() => setIsMouseDown(false)}
       >
-        {squares.map((_, i) => (
+        {canvasGridSquares.map((_, i) => (
           <Square key={i} isMouseDown={isMouseDown} />
         ))}
       </div>
-      <ResolutionSlider side={side} updateSide={setSide} />
     </div>
   );
 };

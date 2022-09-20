@@ -1,7 +1,8 @@
 import { useSketchData } from "./contexts/SketchDataContext";
+import ResolutionSlider from "./ResolutionSlider";
 
 const Controls = () => {
-  const { color, setColor, mode, setMode } = useSketchData();
+  const { color, setColor, mode, setMode, side, setSide } = useSketchData();
 
   return (
     <div className="control-panel">
@@ -41,6 +42,8 @@ const Controls = () => {
           Eraser
         </button>
       </div>
+
+      <ResolutionSlider side={side} updateSide={setSide} />
 
       <button className="control-btn">Clear</button>
     </div>
