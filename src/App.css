@@ -77,8 +77,8 @@
   display: grid;
   grid-template-columns: repeat(32, 1fr);
   grid-template-rows: repeat(32, 1fr);
-  width: 640px;
-  height: 640px;
+  width: 500px;
+  height: 500px;
   background: #fff;
   box-shadow: 0 0 2px 5px #000;
   margin-bottom: 1rem;
@@ -89,6 +89,7 @@ button {
   font-weight: 600;
   width: 200px;
   padding: 0.5rem 1rem;
+  border: 2px solid #000;
   border-radius: 10px;
   background: #fff;
 }
