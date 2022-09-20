@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useSketchData } from "./contexts/SketchDataContext";
 import Square from "./Square";
 
 const Canvas = () => {
   const [isMouseDown, setIsMouseDown] = useState(false);
-  const { side, canvasGridSquares } = useSketchData();
+  const { side, canvasGridSquares, setCanvasRef } = useSketchData();
+  const canvasRef = useRef();
+
+  setCanvasRef(canvasRef.current);
 
   const canvasGridSize = {
     gridTemplateRows: `repeat(${side}, 1fr)`,
@@ -14,6 +17,7 @@ const Canvas = () => {
   return (
     <div className="canvas-container">
       <div
+        ref={canvasRef}
         className="canvas"
         style={canvasGridSize}
         onMouseDown={() => setIsMouseDown(true)}
