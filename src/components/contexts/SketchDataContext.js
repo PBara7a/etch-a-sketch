@@ -5,7 +5,7 @@ const SketchContext = createContext();
 export const useSketchData = () => useContext(SketchContext);
 
 const SketchContextProvider = ({ children }) => {
-  const [config, setConfig] = useState();
+  const [config] = useState();
 
   return (
     <SketchContext.Provider value={config}>{children}</SketchContext.Provider>
