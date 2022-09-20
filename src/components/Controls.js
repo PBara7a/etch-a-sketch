@@ -1,13 +1,28 @@
 import { useState } from "react";
+import { useSketchData } from "./contexts/SketchDataContext";
 
 const Controls = () => {
   const [active, setActive] = useState("draw");
+  const { color, setColor } = useSketchData();
+
+  if (active === "eraser") {
+    setColor("#fff");
+  }
 
   return (
     <div className="control-panel">
       <div className="control-panel__draw-options">
-        <label htmlFor="color-picker" className="color-picker__label" />
-        <input type="color" className="color-picker" id="color-picker" />
+        <label
+          htmlFor="color-picker"
+          className="color-picker__label"
+          style={{ background: color }}
+        />
+        <input
+          type="color"
+          className="color-picker"
+          id="color-picker"
+          onChange={(e) => setColor(e.target.value)}
+        />
 
         <button
           className={"control-btn" + (active === "draw" ? " active" : "")}
