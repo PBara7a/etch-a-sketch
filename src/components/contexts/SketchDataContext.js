@@ -6,10 +6,13 @@ export const useSketchData = () => useContext(SketchContext);
 
 const SketchContextProvider = ({ children }) => {
   const [color, setColor] = useState("#000");
+  const [mode, setMode] = useState("draw");
 
   const value = {
     color,
     setColor,
+    mode,
+    setMode,
   };
 
   return (

@@ -1,13 +1,7 @@
-import { useState } from "react";
 import { useSketchData } from "./contexts/SketchDataContext";
 
 const Controls = () => {
-  const [active, setActive] = useState("draw");
-  const { color, setColor } = useSketchData();
-
-  if (active === "eraser") {
-    setColor("#fff");
-  }
+  const { color, setColor, mode, setMode } = useSketchData();
 
   return (
     <div className="control-panel">
@@ -25,24 +19,24 @@ const Controls = () => {
         />
 
         <button
-          className={"control-btn" + (active === "draw" ? " active" : "")}
+          className={"control-btn" + (mode === "draw" ? " active" : "")}
           name="draw"
-          onClick={(e) => setActive(e.target.name)}
+          onClick={(e) => setMode(e.target.name)}
         >
           Draw
         </button>
         <button
-          className={"control-btn" + (active === "rainbow" ? " active" : "")}
+          className={"control-btn" + (mode === "rainbow" ? " active" : "")}
           name="rainbow"
-          onClick={(e) => setActive(e.target.name)}
+          onClick={(e) => setMode(e.target.name)}
         >
           Rainbow
         </button>
 
         <button
-          className={"control-btn" + (active === "eraser" ? " active" : "")}
+          className={"control-btn" + (mode === "eraser" ? " active" : "")}
           name="eraser"
-          onClick={(e) => setActive(e.target.name)}
+          onClick={(e) => setMode(e.target.name)}
         >
           Eraser
         </button>
