@@ -6,13 +6,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  background: url("./assets/pixel-bg.png");
+}
+
 .App {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   height: 100vh;
-  background: url("./assets/pixel-bg.png");
 }
 
 .App h1 {
@@ -86,6 +89,7 @@
 }
 
 button {
+  color: #000;
   font-family: monospace;
   font-weight: 600;
   width: 200px;
@@ -132,5 +136,6 @@ input[type="range"]::-webkit-slider-runnable-track {
 }
 
 footer {
+  margin-top: 16px;
   font-family: monospace;
 }
