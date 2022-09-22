@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useSketchData } from "./contexts/SketchDataContext";
 import Square from "./Square";
+import exportAsImage from "../utils/exportComponentAsImage";
 
 const Canvas = () => {
   const { side, canvasGridSquares, setCanvasRef } = useSketchData();
@@ -13,6 +14,8 @@ const Canvas = () => {
     gridTemplateColumns: `repeat(${side}, 1fr)`,
   };
 
+  const handleClick = () => exportAsImage(canvasRef.current, "test");
+
   return (
     <div className="canvas-container">
       <div ref={canvasRef} className="canvas" style={canvasGridSize}>
@@ -20,6 +23,7 @@ const Canvas = () => {
           <Square key={i} />
         ))}
       </div>
+      <button onClick={handleClick}>Download</button>
     </div>
   );
 };
