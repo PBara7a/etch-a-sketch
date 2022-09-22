@@ -14,7 +14,7 @@ const Canvas = () => {
     gridTemplateColumns: `repeat(${side}, 1fr)`,
   };
 
-  const handleClick = () => exportAsImage(canvasRef.current, "test");
+  const handleClick = () => exportAsImage(canvasRef.current, "sketch");
 
   return (
     <div className="canvas-container">
