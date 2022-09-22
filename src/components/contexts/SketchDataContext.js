@@ -20,13 +20,18 @@ const SketchContextProvider = ({ children }) => {
     });
   };
 
+  const updateSide = (num) => {
+    clearCanvas();
+    setSide(num);
+  };
+
   const value = {
     color,
     setColor,
     mode,
     setMode,
     side,
-    setSide,
+    updateSide,
     canvasGridSquares,
     clearCanvas,
     setCanvasRef,
