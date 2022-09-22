@@ -9,7 +9,7 @@
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 100vh;
   background: url("./assets/pixel-bg.png");
@@ -20,6 +20,7 @@
   font-size: 72px;
   letter-spacing: 5px;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .main {
@@ -128,4 +129,8 @@ input[type="range"]::-webkit-slider-runnable-track {
   box-shadow: none;
   border: none;
   background: transparent;
+}
+
+footer {
+  font-family: monospace;
 }
