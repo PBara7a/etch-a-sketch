@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useSketchData } from "./contexts/SketchDataContext";
 import Square from "./Square";
 
-const Canvas = ({ isMouseDown }) => {
+const Canvas = () => {
   const { side, canvasGridSquares, setCanvasRef } = useSketchData();
   const canvasRef = useRef();
 
@@ -17,7 +17,7 @@ const Canvas = ({ isMouseDown }) => {
     <div className="canvas-container">
       <div ref={canvasRef} className="canvas" style={canvasGridSize}>
         {canvasGridSquares.map((_, i) => (
-          <Square key={i} isMouseDown={isMouseDown} />
+          <Square key={i} />
         ))}
       </div>
     </div>

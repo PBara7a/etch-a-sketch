@@ -21,8 +21,8 @@ const SketchContextProvider = ({ children }) => {
   };
 
   const updateSide = (num) => {
-    clearCanvas();
     setSide(num);
+    clearCanvas();
   };
 
   const value = {
